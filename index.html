@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Blacklist</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome cho Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fa-solid fa-ban"></i> Danh Sách Đen (Blacklist)</h1>
+            <p>Quản lý và chặn các đối tượng vi phạm hoặc có rủi ro cao</p>
+        </header>
+
+        <!-- Bảng điều khiển & Thống kê -->
+        <div class="dashboard-cards">
+            <div class="card bg-danger">
+                <i class="fa-solid fa-shield-halved card-icon"></i>
+                <div>
+                    <h3 id="total-count">0</h3>
+                    <p>Tổng số đối tượng bị chặn</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Thêm Đối Tượng Mới -->
+        <div class="form-container">
+            <h2>Thêm vào Blacklist</h2>
+            <form id="add-blacklist-form">
+                <div class="form-group">
+                    <input type="text" id="target-name" placeholder="Tên / IP / Email / Domain..." required>
+                </div>
+                <div class="form-group">
+                    <select id="target-type" required>
+                        <option value="">-- Chọn loại --</option>
+                        <option value="IP">Địa chỉ IP</option>
+                        <option value="User">Tài khoản User</option>
+                        <option value="Domain">Tên miền (Domain)</option>
+                        <option value="Phone">Số điện thoại</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="target-reason" placeholder="Lý do chặn (Spam, Fraud, Hack...)" required>
+                </div>
+                <button type="submit" class="btn btn-add"><i class="fa-solid fa-plus"></i> Thêm</button>
+            </form>
+        </div>
+
+        <!-- Thanh Tìm Kiếm & Lọc -->
+        <div class="filter-section">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Tìm kiếm theo tên hoặc lý do...">
+            </div>
+            <div class="filter-box">
+                <select id="filter-type">
+                    <option value="ALL">Tất cả loại</option>
+                    <option value="IP">Địa chỉ IP</option>
+                    <option value="User">Tài khoản User</option>
+                    <option value="Domain">Tên miền</option>
+                    <option value="Phone">Số điện thoại</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Bảng Danh Sách Blacklist -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Đối Tượng</th>
+                        <th>Phân Loại</th>
+                        <th>Lý Do Chặn</th>
+                        <th>Ngày Thêm</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody id="blacklist-table-body">
+                    <!-- Dữ liệu sẽ được chèn qua Javascript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
