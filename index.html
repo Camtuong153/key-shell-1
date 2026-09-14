@@ -1,1 +1,54 @@
-ex1t
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Are Blacklisted</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="ban-container">
+        <!-- Icon Cảnh báo -->
+        <div class="ban-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+
+        <!-- Tiêu đề chính -->
+        <h1 class="ban-title">You Joined Blacklist</h1>
+
+        <!-- Khối Thông tin Chặn -->
+        <div class="info-box">
+            <div class="info-row">
+                <span class="label">Time Join:</span>
+                <span class="value" id="time-join">Loading...</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">IP Driver:</span>
+                <span class="valueHighlight" id="user-ip">Checking...</span>
+            </div>
+
+            <div class="info-row reason-row">
+                <span class="label">Reason:</span>
+                <span class="reason-text">During server maintenance</span>
+            </div>
+        </div>
+
+        <!-- Đếm ngược thời gian còn lại -->
+        <div class="countdown-box">
+            <p class="countdown-label">TIME LEFT</p>
+            <div class="timer" id="countdown-timer">60:00</div>
+        </div>
+
+        <!-- Gợi ý hành động -->
+        <div class="footer-note">
+            Please wait until the countdown ends or contact support if you think this is an error.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
